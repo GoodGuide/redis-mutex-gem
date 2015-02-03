@@ -8,6 +8,8 @@ rvm:
 
 before_install: gem install bundler
 
+bundler_args: --without development
+
 before_script:
 - sudo add-apt-repository ppa:chris-lea/redis-server -y
 - sudo apt-get update -q
