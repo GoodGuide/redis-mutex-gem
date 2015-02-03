@@ -1,18 +1,18 @@
 language: ruby
 rvm:
-- 1.9.2
 - 1.9.3-p551
 - 2.0.0
 - 2.1.0
-- jruby-18mode
 - jruby-19mode
 - jruby-20mode
-- jruby-21mode
-- rbx
+
+before_install: gem install bundler
+
 before_script:
 - sudo add-apt-repository ppa:chris-lea/redis-server -y
 - sudo apt-get update -q
 - sudo apt-get install redis-server
+
 deploy:
   provider: rubygems
   api_key:
