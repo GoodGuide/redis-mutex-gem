@@ -1,5 +1,7 @@
 # RedisMutex
 
+[![Build Status](https://travis-ci.org/GoodGuide/redis_mutex.svg?branch=master)](https://travis-ci.org/GoodGuide/redis_mutex)
+
 This gem provides very simple distributed pessimistic locking using Redis.
 
 It provides no API, at present, for a blocking lock operation. For our purposes, we don't require blocking, as we're using this within a Sidekiq work fetcher, which already has polling semantics (and in which the order of fetchers attempting to lock isn't important).
