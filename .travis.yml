@@ -20,3 +20,6 @@ deploy:
   gem: redis_mutex
   on:
     repo: GoodGuide/redis_mutex
+
+notifications:
+  slack: goodguide:ht5WFmKFhguaSwbDaIIr8kur
