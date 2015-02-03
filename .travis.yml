@@ -12,6 +12,7 @@ before_script:
 - sudo add-apt-repository ppa:chris-lea/redis-server -y
 - sudo apt-get update -q
 - sudo apt-get install redis-server
+- sudo start redis-server
 
 deploy:
   provider: rubygems
