@@ -43,11 +43,11 @@ class TestRedisMutex < Minitest::Test
     assert redis.get(key) == original_token
   end
 
-  def test_locked_when_unlocked
+  def test_locked_is_false_when_unlocked
     assert !mutex_a.locked?
   end
 
-  def test_locked_when_locked
+  def test_locked_is_true_when_locked
     mutex_a.acquire_lock(DEFAULT_TIMEOUT)
     assert mutex_a.locked?
   end
