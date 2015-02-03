@@ -117,4 +117,13 @@ class TestRedisMutex < Minitest::Test
     assert RedisMutex.new(redis, mutex_name, mutex_a.token).release
   end
 
+  def test_automatic_script_loading
+    # lock to ensure a script is loaded and its SHA cached
+    mutex_a.acquire_lock(1)
+    mutex_a.release
+
+    redis.script(:flush)
+    assert mutex_a.acquire_lock(1)
+  end
+
 end
