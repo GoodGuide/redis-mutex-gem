@@ -6,7 +6,7 @@ require 'redis_mutex/version'
 Gem::Specification.new do |spec|
   spec.name          = "redis_mutex"
   if ENV['TRAVIS']
-    spec.version       = "#{RedisMutex::VERSION}-alpha-#{ENV['TRAVIS_BUILD_NUMBER']}"
+    spec.version       = "#{RedisMutex::VERSION}.alpha.#{ENV['TRAVIS_BUILD_NUMBER']}"
   else
     spec.version       = RedisMutex::VERSION
   end
