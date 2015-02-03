@@ -5,7 +5,11 @@ require 'redis_mutex/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "redis_mutex"
-  spec.version       = RedisMutex::VERSION
+  if ENV['TRAVIS']
+    spec.version       = "#{RedisMutex::VERSION}-alpha-#{ENV['TRAVIS_BUILD_NUMBER']}"
+  else
+    spec.version       = RedisMutex::VERSION
+  end
   spec.authors       = ["Ryan Taylor Long"]
   spec.email         = ["ryan.long@goodguide.com"]
   spec.summary       = %q{Simple distributed mutex using Redis.}
